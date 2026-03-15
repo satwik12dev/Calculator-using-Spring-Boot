@@ -1,0 +1,128 @@
+/* Reset */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+/* Full screen background */
+
+body,html,#root{
+  height:100%;
+  width:100%;
+}
+
+/* App container */
+
+.app{
+  height:100vh;
+  width:100vw;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background: linear-gradient(135deg,#667eea,#764ba2);
+}
+
+/* Calculator */
+
+.calculator{
+
+  width:350px;
+  padding:25px;
+  border-radius:20px;
+
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.5),
+    inset 0 0 10px rgba(255,255,255,0.2);
+
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+/* Display */
+
+.display{
+
+  height:80px;
+  border-radius:12px;
+  margin-bottom:20px;
+
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+
+  font-size:36px;
+  color:white;
+  padding:15px;
+
+  background:rgba(0,0,0,0.6);
+}
+
+/* Buttons grid */
+
+.buttons{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:12px;
+}
+
+/* Buttons */
+
+button{
+
+  height:60px;
+  border:none;
+  border-radius:12px;
+
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+
+  background: rgba(255,255,255,0.2);
+  color:white;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.2s ease;
+
+  box-shadow:0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Hover */
+
+button:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,0.35);
+}
+
+/* Active */
+
+button:active{
+  transform:scale(0.95);
+}
+
+/* Special buttons */
+
+.clear{
+  grid-column: span 2;
+  background:#ff5252;
+}
+
+.equal{
+  grid-column: span 2;
+  background:#00c853;
+}
+
+.zero{
+  grid-column: span 2;
+}
+
+.op{
+  background:#ff9800;
+}
