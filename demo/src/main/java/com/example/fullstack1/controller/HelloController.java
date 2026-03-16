@@ -1,9 +1,6 @@
 package com.example.fullstack1.controller;
 
-import com.example.fullstack1.model.AddResponse;
-import com.example.fullstack1.model.DevResponse;
-import com.example.fullstack1.model.MulResponse;
-import com.example.fullstack1.model.SubResponse;
+import com.example.fullstack1.model.Response;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,32 +9,42 @@ import org.springframework.web.bind.annotation.*;
 public class HelloController {
 
     @GetMapping("/add")
-    public AddResponse add(@RequestParam double a, @RequestParam double b){
+    public Response add(@RequestParam double a, @RequestParam double b){
         double result = a + b;
-        return new AddResponse(a, b, result, "Addition successful");
+        return new Response(a,b,result,"Addition successful");
     }
-    
+
     @GetMapping("/sub")
-    public SubResponse subtract(@RequestParam double a, @RequestParam double b){
-        double res  = a-b;
-        return new SubResponse(a,b,res,"Subtraction Successful");
+    public Response subtract(@RequestParam double a, @RequestParam double b){
+        double result = a - b;
+        return new Response(a,b,result,"Subtraction successful");
     }
+
     @GetMapping("/mul")
-    public MulResponse multiplication(@RequestParam double a, @RequestParam double b){
-        double res  = a*b;
-        return new MulResponse(a,b,res,"Multiplication Successful");
+    public Response multiply(@RequestParam double a, @RequestParam double b){
+        double result = a * b;
+        return new Response(a,b,result,"Multiplication successful");
     }
+
     @GetMapping("/div")
-    public DevResponse Division(@RequestParam double a, @RequestParam double b){
-        String msg = "";
-        double r=0.0;
-        if(b==0){
-            msg = "DIVISION NOT POSSIBLE";
-        } else if (b!=0) {
-            msg = "Division Succesfull";
-            r = a/b;
+    public Response divide(@RequestParam double a, @RequestParam double b){
+
+        if(b == 0){
+            throw new ArithmeticException("Cannot divide by zero");
         }
-        double res  = r;
-        return new DevResponse(a,b,res,msg);
+
+        double result = a / b;
+        return new Response(a,b,result,"Division successful");
+    }
+
+    @GetMapping("/mod")
+    public Response modulo(@RequestParam double a, @RequestParam double b){
+
+        if(b == 0){
+            throw new ArithmeticException("Cannot modulo by zero");
+        }
+
+        double result = a % b;
+        return new Response(a,b,result,"Modulo successful");
     }
 }
