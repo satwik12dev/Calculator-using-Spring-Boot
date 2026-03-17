@@ -104,6 +104,7 @@ http://localhost:8080
 | Subtraction | `/api/sub` | `/api/sub?a=10&b=5` |
 | Multiplication | `/api/mul` | `/api/mul?a=10&b=5` |
 | Division | `/api/div` | `/api/div?a=10&b=5` |
+| Modulus | `/api/mod` | `/api/mod?a=10&b=5`|
 
 ---
 
