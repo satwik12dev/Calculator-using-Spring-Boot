@@ -6,7 +6,8 @@ A simple **REST API Calculator** built using **Spring Boot** that performs basic
 - ➖ Subtraction
 - ✖ Multiplication
 - ➗ Division
-
+- ✖ Square
+- Root
 This project demonstrates how to build a **backend REST API using Spring Boot**.
 
 ---
