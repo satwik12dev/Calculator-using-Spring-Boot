@@ -119,4 +119,10 @@ public class HelloController {
         String msg = "sec(" + a + ") Successful";
         return new TrigoResponse(a, result, msg);
     }
+
+    @GetMapping("/ten")
+    public  squareResponse tenfunc(@RequestParam double a){
+        double res = Math.pow(10,a);
+        return new squareResponse(a, res, "10^"+a+" successful");
+    }
 }
