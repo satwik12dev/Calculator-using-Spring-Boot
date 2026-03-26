@@ -125,4 +125,10 @@ public class HelloController {
         double res = Math.pow(10,a);
         return new squareResponse(a, res, "10^"+a+" successful");
     }
+
+    @GetMapping("/power")
+    public  Response power(@RequestParam double a,@RequestParam double b){
+        double res = Math.pow(a,b);
+        return new Response(a,b,res,"("+a+")^"+b+" Succesfully calculated");
+    }
 }
