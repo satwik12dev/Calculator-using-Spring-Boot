@@ -129,10 +129,6 @@ http://localhost:8080/api/add?a=10&b=20
 # 🧑‍💻 Author
 
 **Satwik**
-
-GitHub:  
-https://github.com/satwik12dev
-
 ---
 
 # ⭐ Support
